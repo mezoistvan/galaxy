@@ -1,0 +1,307 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.solarsystem {
+    margin: 2vh;
+    min-width: 96vh;
+    width: 96vh;
+    min-height: 96vh;
+    height: 96vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    position: absolute;
+}
+
+.orbit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.orbit-show {
+    border: 1px solid #394057;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.under {
+    z-index: -1;
+}
+
+.planet {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+
+    z-index: 10;
+}
+
+.mercury {
+    width: 30vh;
+    height: 30vh;
+}
+
+.mercury .orbit-show {
+    border-radius: 15vh;
+}
+
+.mercury .planet {
+    height: calc(2 * 0.39032vh);
+    width: calc(2 * 0.39032vh);
+    border-radius: calc(2 * 0.19516vh);
+
+    position: relative;
+    top: calc(2 * -0.19516vh);
+}
+
+.venus {
+    width: 38vh;
+    height: 38vh;
+}
+
+.venus .orbit-show {
+    border-radius: 19vh;
+}
+
+.venus .planet {
+    height: calc(2 * 0.96832vh);
+    width: calc(2 * 0.96832vh);
+    border-radius: calc(2 * 0.48416vh);
+
+    position: relative;
+    top: calc(2 * -0.48416vh);
+}
+
+.earth {
+    width: 46vh;
+    height: 46vh;
+}
+
+.earth .orbit-show {
+    border-radius: 23vh;
+}
+
+.earth .planet {
+    height: calc(2 * 1.02048vh);
+    width: calc(2 * 1.02048vh);
+    border-radius: calc(2 * 0.51024vh);
+
+    position: relative;
+    top: calc(2 * -0.51024vh);
+}
+
+.mars {
+    width: 54vh;
+    height: 54vh;
+}
+
+.mars .orbit-show {
+    border-radius: 27vh;
+}
+
+.mars .planet {
+    height: calc(2 * 0.54336vh);
+    width: calc(2 * 0.54336vh);
+    border-radius: calc(2 * 0.27168vh);
+
+    position: relative;
+    top: calc(2 * -0.27168vh);
+}
+
+.asteroids {
+    width: 71vh;
+    height: 71vh;
+}
+
+.asteroids .planet {
+    background-image: radial-gradient(circle, black 0%, black 55%, rgba(255, 255, 255, 0) 62%, black 68%), url(whitenoise.png);
+    width: 100%;
+    height: 100%;
+    border-radius: 34vh;
+    z-index: -100;
+}
+
+.under.wrapper.asteroids {
+    z-index: -100;
+}
+
+.jupiter {
+    width: 70vh;
+    height: 70vh;
+}
+
+.jupiter .orbit-show {
+    border-radius: 35vh;
+}
+
+.jupiter .planet {
+    height: 11.43872vh;
+    width: 11.43872vh;
+    border-radius: 5.71936vh;
+
+    position: relative;
+    top: -5.71936vh;
+}
+
+.saturn {
+    width: 78vh;
+    height: 78vh;
+}
+
+.saturn .orbit-show {
+    border-radius: 39vh;
+}
+
+.saturn .planet {
+    height: 9.64288vh;
+    width: 9.64288vh;
+    border-radius: 4.82144vh;
+
+    position: relative;
+    top: -4.82144vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saturn .ring {
+    min-height: 6vh;
+    min-width: 10vh;
+    border: 2vh solid rgba(255, 255, 255, 0.7);
+    border-radius: 10vh;
+
+    transform: skewY(50deg);
+}
+
+.uranus {
+    width: 86vh;
+    height: 86vh;
+}
+
+.uranus .orbit-show {
+    border-radius: 43vh;
+}
+
+
+.uranus .planet {
+    height: 4.08944vh;
+    width: 4.08944vh;
+    border-radius: 2.04472vh;
+
+    position: relative;
+    top: -2.04472vh;
+}
+
+.neptune {
+    width: 94vh;
+    height: 94vh;
+}
+
+.neptune .orbit-show {
+    border-radius: 47vh;
+}
+
+
+.neptune .planet {
+    height: 3.96224vh;
+    width: 3.96224vh;
+    border-radius: 1.98112vh;
+
+    position: relative;
+    top: -1.98112vh;
+}
+
+/* CSS3 Animations */
+.solarsystem .orbit {
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+    animation-name: orbit;
+
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-name: orbit;
+
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-timing-function:linear;
+    -moz-animation-name: orbit;
+}
+
+.solarsystem .mercury.anim .orbit {animation-duration:7603200s; -webkit-animation-duration:7603200s; -moz-animation-duration:7603200s;}
+.solarsystem .venus.anim .orbit {animation-duration:19414080s; -webkit-animation-duration:19414080s; -moz-animation-duration:19414080s;}
+.solarsystem .earth.anim .orbit {animation-duration:31558153s; -webkit-animation-duration:31558153s; -moz-animation-duration:31558153s;}
+.solarsystem .earth .moon.anim .orbit {animation-duration:2419200s; -webkit-animation-duration:2419200s; -moz-animation-duration:2419200s;}
+.solarsystem .mars.anim .orbit {animation-duration:59356800s; -webkit-animation-duration:59356800s; -moz-animation-duration:59356800s;}
+.solarsystem .asteroids.anim .orbit {animation-duration:593568000s; -webkit-animation-duration:593568000s; -moz-animation-duration:593568000s;}
+.solarsystem .jupiter.anim .orbit {animation-duration:374335776s; -webkit-animation-duration:374335776s; -moz-animation-duration:374335776s;}
+.solarsystem .saturn.anim .orbit {animation-duration:929577600s; -webkit-animation-duration:929577600s; -moz-animation-duration:929577600s;}
+.solarsystem .uranus.anim .orbit {animation-duration:2651486400s; -webkit-animation-duration:2651486400s; -moz-animation-duration:2651486400s;}
+.solarsystem .neptune.anim .orbit {animation-duration:5199724800s; -webkit-animation-duration:5199724800s; -moz-animation-duration:5199724800s;}
+.solarsystem .pluto.anim .orbit {animation-duration:7820928000s; -webkit-animation-duration:7820928000s; -moz-animation-duration:7820928000s;}
+
+/* .solarsystem .mercury.anim .orbit {animation-duration:7s; -webkit-animation-duration:7s; -moz-animation-duration:7s;}
+.solarsystem .venus.anim .orbit {animation-duration:19s; -webkit-animation-duration:19s; -moz-animation-duration:19s;}
+.solarsystem .earth.anim .orbit {animation-duration:31s; -webkit-animation-duration:31s; -moz-animation-duration:31s;}
+.solarsystem .earth .moon.anim .orbit {animation-duration:2s; -webkit-animation-duration:2s; -moz-animation-duration:2s;}
+.solarsystem .mars.anim .orbit {animation-duration:59s; -webkit-animation-duration:59s; -moz-animation-duration:59s;}
+.solarsystem .asteroids.anim .orbit {animation-duration:590s; -webkit-animation-duration:590s; -moz-animation-duration:590s;}
+.solarsystem .jupiter.anim .orbit {animation-duration:37s; -webkit-animation-duration:37s; -moz-animation-duration:37s;}
+.solarsystem .saturn.anim .orbit {animation-duration:92s; -webkit-animation-duration:92s; -moz-animation-duration:92s;}
+.solarsystem .uranus.anim .orbit {animation-duration:265s; -webkit-animation-duration:265s; -moz-animation-duration:265s;}
+.solarsystem .neptune.anim .orbit {animation-duration:519s; -webkit-animation-duration:519s; -moz-animation-duration:519s;}
+.solarsystem .pluto.anim .orbit {animation-duration:782s; -webkit-animation-duration:782s; -moz-animation-duration:782s;}
+ */
+@keyframes orbit { from { -webkit-transform:rotate(0deg) } to { -webkit-transform:rotate(360deg) } }
+@-webkit-keyframes orbit { from { -webkit-transform:rotate(0deg) } to { -webkit-transform:rotate(360deg) } }
+@-moz-keyframes orbit { from { -moz-transform:rotate(0deg) } to { -moz-transform:rotate(360deg) } }
+
+.sun {
+    height: 15vh;
+    width: 15vh;
+    background-color: white;
+    border-radius: 7.5vh;
+
+    -webkit-box-shadow: 0px 0px 5vh 1vh rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 5vh 1vh rgba(255,255,255,1);
+    box-shadow: 0px 0px 5vh 1vh rgba(255,255,255,1);
+}
+
+.title {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    font-size: 4vh;
+    font-weight: bold;
+    position: absolute;
+    color: white;
+    top: 12vh;
+    left: -7vh;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+}
+
+.time {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    font-size: 4vh;
+    font-weight: bold;
+    position: absolute;
+    color: white;
+    bottom: 7vh;
+    right: -3vh;
+    text-transform: lowercase;
+    transform: rotate(-90deg);
+}
