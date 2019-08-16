@@ -1,4 +1,4 @@
-var initialDate = new Date('2019-08-13 20:00');
+var initialDate = new Date('Tue Aug 13 2019 20:00:00 GMT+0200');
 var initialRotations = {
     mercury: 55,
     venus: 310,
@@ -29,9 +29,9 @@ function getCurrentRotationForPlanet(planetName) {
 
 Object.keys(initialRotations).forEach(function (planetName) {
     var currentRotation = getCurrentRotationForPlanet(planetName);
-    var el = document.querySelector('.' + planetName);
+    var el = document.querySelector('.primary.' + planetName);
     el.style.transform = 'rotate(' + currentRotation + 'deg)';
-    el.classList.add('anim')
+    el.classList.add('anim');
 });
 
 function toHHMMSS(date) {
